@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   posture:
-    image: paidax/posture:0.0.1
+    image: paidax/posture:0.0.2
     container_name: posture
     deploy:
       resources:
