@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  posture:
+    image: paidax/posture:0.0.1
+    container_name: posture
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - 9999:9999
+    command: tail -f /dev/null
