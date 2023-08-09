@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   posture:
-    image: paidax/posture:0.0.2
+    image: paidax/posture:0.0.3
     container_name: posture
     deploy:
       resources:
@@ -11,5 +11,5 @@ services:
               count: all
               capabilities: [gpu]
     ports:
-      - 9999:9999
-    command: tail -f /dev/null
+      - 10056:10056
+    command: uvicorn main:app --port 10056 --host 0.0.0.0
