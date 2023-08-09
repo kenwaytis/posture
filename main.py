@@ -21,21 +21,6 @@ class Image(BaseModel):
     images: List[str]
     threshold: int = 200
 
-@app.on_event("startup")
-async def startup_event():
-    with open("test1.png", "rb") as image_file:
-        # 对图片进行Base64编码
-        encoded_string_1 = base64.b64encode(image_file.read()).decode('utf-8')
-    with open("test2.png", "rb") as image_file:
-        # 对图片进行Base64编码
-        encoded_string_2 = base64.b64encode(image_file.read()).decode('utf-8')
-    data = {
-        "images": [encoded_string_1,encoded_string_2],
-        "threshold": 200
-    }
-    response = requests.post("http://localhost:10056/predict", json=data).text
-    logger.info(f"Startup Event Response: {response}")
-
 @app.post("/predict")
 async def prediction(items: Image):
     try:

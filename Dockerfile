@@ -10,6 +10,17 @@ RUN pip install --no-cache-dir \
         fastapi \
         uvicorn \
         pydantic==1.10.8 \
-        loguru 
-
+        loguru \
+        pai-easycv>=0.11.0 \
+        wget \
+        dataclasses \
+        seaborn \
+        json-tricks \
+        jsonplus \
+        cityscapesscripts \
+        pytorch-metric-learning \
+        xtcocotools \
+        appdirs \
+        typing
+        
 COPY . . 
