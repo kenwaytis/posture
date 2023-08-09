@@ -1,4 +1,4 @@
-FROM paidax/dev-containers:modelscope-v0.8
+FROM registry.cn-beijing.aliyuncs.com/modelscope-repo/modelscope:ubuntu20.04-cuda11.7.1-py38-torch2.0.1-tf1.15.5-1.8.0
 
 WORKDIR /home/posture
 
@@ -10,17 +10,5 @@ RUN pip install --no-cache-dir \
         fastapi \
         uvicorn \
         pydantic==1.10.8 \
-        loguru \
-        pai-easycv>=0.11.0 \
-        wget \
-        dataclasses \
-        seaborn \
-        json-tricks \
-        jsonplus \
-        cityscapesscripts \
-        pytorch-metric-learning \
-        xtcocotools \
-        appdirs \
-        typing
-        
+        loguru
 COPY . . 
